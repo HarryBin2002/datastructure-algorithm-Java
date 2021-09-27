@@ -1,21 +1,7 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ClosestNumbers {
-    // Bubble Sort Algorithm
-    public static void bubble_sort(int[] arr) {
-        for (int i = 0; i < arr.length-1; i++) {
-            boolean check = true;
-            for (int j = 0; j < arr.length-1-i; j++) {
-                if (arr[j] > arr[j+1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                    check = false;
-                }
-            }
-            if (check) break;
-        }
-    }
 
     // Find The smallest difference between two adjacent numbers
     public static int smallest_diff(int[] arr) {
@@ -42,14 +28,15 @@ public class ClosestNumbers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Get data from keyboard to an array
+        // Input Data
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-        bubble_sort(arr);
+        // Sorting Array
+        Arrays.sort(arr);
 
         int smallest_diff = smallest_diff(arr);
 
