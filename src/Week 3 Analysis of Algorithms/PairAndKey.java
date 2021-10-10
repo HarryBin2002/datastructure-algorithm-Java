@@ -11,6 +11,7 @@ public class PairAndKey {
 
             if (diff == k) {
                 count++;
+                x++;
                 y++;
             } else if (diff < k) {
                 y++;
