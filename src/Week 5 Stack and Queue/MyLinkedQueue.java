@@ -4,11 +4,12 @@ import week5.InterfaceStackAndQueue;
 import week5.Node;
 
 /*
-This stack container below is built by Linked List using OOP (Asbtraction)
-Stack works by LIFO.
+This Queue below is built using OOP (Abstraction) Interface.
+Queue works by FIFO.
  */
 
-public class MyLinkedStack implements InterfaceStackAndQueue {
+public class MyLinkedQueue implements InterfaceStackAndQueue{
+
     @Override
     public boolean isEmpty(Node head) {
         return head == null;
@@ -25,9 +26,8 @@ public class MyLinkedStack implements InterfaceStackAndQueue {
     @Override
     public Node push(Node head, int value) {
         Node temp = create(value);
-        Node p = head;
-        while (p.next != null) p = p.next;
-        p.next = temp;
+        temp.next = head;
+        head = temp;
         return head;
     }
 

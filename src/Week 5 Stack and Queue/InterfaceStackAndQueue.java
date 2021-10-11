@@ -1,6 +1,9 @@
 package week5;
 
 import week5.Node;
+/*
+This Interface below is built to supply for Building Stack or Queue structure.
+ */
 
 public interface InterfaceStackAndQueue {
     public boolean isEmpty(Node head);
