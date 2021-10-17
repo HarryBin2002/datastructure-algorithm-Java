@@ -12,8 +12,8 @@ public class MyMain {
         int n = sc.nextInt();
         int x = sc.nextInt();
 
-//        MyLinkedStack sk = new MyLinkedStack();
-        MyLinkedQueue sk = new MyLinkedQueue();
+        MyLinkedStack sk = new MyLinkedStack();
+//        MyLinkedQueue sk = new MyLinkedQueue();
         Node head = sk.create(x);
         for (int i = 1; i < n; i++) {
             x = sc.nextInt();
@@ -23,8 +23,10 @@ public class MyMain {
         sk.show(head);
         sk.pop(head);
         System.out.println();
+
         sk.show(head);
         sk.pop(head);
+        System.out.println();
 
         sc.close();
     }

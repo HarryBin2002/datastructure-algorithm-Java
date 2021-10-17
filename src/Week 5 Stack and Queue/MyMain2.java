@@ -11,23 +11,23 @@ public class MyMain2 {
 
         int size = sc.nextInt();
 
-//        MyArrayStack sk = new MyArrayStack(size);
-        MyArrayQueue q = new MyArrayQueue(size);
+        MyArrayStack sk = new MyArrayStack(size);
+//        MyArrayQueue q = new MyArrayQueue(size);
         for (int i = 0; i < size; i++) {
             int x = sc.nextInt();
-            q.push(x);
+            sk.push(x);
         }
 
-        q.show();
-        q.pop();
+        sk.show();
+        sk.pop();
         System.out.println();
 
-        q.show();
-        q.pop();
+        sk.show();
+        sk.pop();
         System.out.println();
 
-        q.show();
-        q.pop();
+        sk.show();
+        sk.pop();
         System.out.println();
 
         sc.close();
