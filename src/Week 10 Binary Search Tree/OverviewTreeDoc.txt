@@ -12,6 +12,8 @@ Data: Giá trị của một phần tử
 Left pointer: Con trỏ trỏ đến cây nhị phân bên trái Node.
 Right pointer: Con trỏ trỏ đến cây nhị phân bên phải Node.
 
+
+
 Các thành phần cơ bản của cây nhị phân bao gồm:
 Root: Được gọi là Node gốc của cây (là một Node cha), một cây chỉ có một Node gốc duy nhất và nó không có Node cha nào.
 Parent Node: Là Node cha của một Node cụ thể nào đó.
