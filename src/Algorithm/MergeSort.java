@@ -48,6 +48,7 @@ public class MergeSort {
     /*
     Best: O(N*LogN)
     Worst: O(N*LogN)
+    Stable algorithm
      */
 
     public static void main(String[] args) {

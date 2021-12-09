@@ -1,12 +1,15 @@
 package week10;
 
-
 class Node {
     int value;
     Node left;
     Node right;
 
     Node(int value) {
+        this.value = value;
+    }
+
+    Node(int value, Node left, Node right) {
         this.value = value;
         this.left = null;
         this.right = null;
@@ -23,6 +26,10 @@ class BinaryTree {
      */
 
     //Adding function
+    /*
+    Worst case: O(n)
+    ==> O(h) h is the heigh of BST
+    */
 
     private Node addRecursive(Node current, int value) {
         if (current == null) {
@@ -44,6 +51,11 @@ class BinaryTree {
     }
 
     // Finding Function
+    /*
+    Worst case: O(n)
+    ==> O(h) h is the heigh of BST
+    */
+
     private boolean findNodeRecursive(Node current, int value) {
         if (current == null) {
             return false;
@@ -69,36 +81,54 @@ class BinaryTree {
     Find the node what need to delete. After delete that node, we move the right node of that node up
     */
 
-    private Node deleteNodRecursive(Node current, int value) {
+    // This function to find the successor, the node which has the biggest value
+    private int leftSuccessor(Node current) {
+        current = current.left;
+
+        while (current.right != null) {
+            current = current.right;
+        }
+
+        return current.value;
+    }
+
+    private int rightSuccessor(Node current) {
+        current = root.right;
+
+        while (current.left != null) {
+            current = current.left;
+        }
+
+        return current.value;
+    }
+
+    private Node deleteNodRecursive(Node current, int key) {
         if (current == null) {
             return null;
         }
 
-        if (value == current.value) {
+        // find the node has the value equal to key, three cases here.
+        if (key < current.value) {
+            current.left = deleteNodRecursive(current.left, key);
+        } else if (key > current.value) {
+            current.right = deleteNodRecursive(current.right, key);
+        } else {
+            // Then, we also three cases here before remove the node and change it by the other node below
             if (current.left == null && current.right == null) {
                 return null;
-            }
-
-            if (current.right == null) {
-                return current.left;
-            }
-
-            if (current.left == null) {
-                return current.right;
+            } else if (current.right != null) {
+                    current.value = rightSuccessor(current);
+                    current.right = deleteNodRecursive(current.right, current.value);
+            } else {
+                    current.value = leftSuccessor(current);
+                    current.left = deleteNodRecursive(current.left, current.value);
             }
         }
-        if (value < current.value) {
-            current.left = deleteNodRecursive(current.left, value);
-            return current;
-        } else {
-            current.right = deleteNodRecursive(current.right, value);
-            return current;
-        }
+        return current;
     }
 
-    public void delete(int value) {
-
-        root = deleteNodRecursive(root, value);
+    public void delete(int key) {
+        root = deleteNodRecursive(root, key);
     }
 
     // Counting Height of the Binary Tree
@@ -130,6 +160,11 @@ public class BinarySearchTree {
 
         System.out.println(bt.countHeight(bt.root));
 
+        System.out.println(bt.find(5));
+
+        bt.delete(5);
+
+        System.out.println(bt.find(5));
 
     }
 }

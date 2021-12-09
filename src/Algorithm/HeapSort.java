@@ -46,6 +46,11 @@ public class HeapSort {
         }
     }
 
+    /*
+    average, best-case, and worst-case: O(nlog(n)).
+    Not stable algorithm
+    */
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

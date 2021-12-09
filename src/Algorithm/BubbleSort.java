@@ -28,6 +28,7 @@ public class BubbleSort {
     /*
      Best: O(N)
      Worst: O(N^2)
+     Stable algorithm
      */
 
     public static void main(String[] args) {

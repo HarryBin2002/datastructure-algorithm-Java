@@ -36,6 +36,7 @@ public class QuickSort {
     /*
     Best: O(N*LogN)
     Worst: O(N^2)
+    Not stable algorithm
      */
 
     public static void main(String[] args) {
