@@ -1,3 +1,4 @@
+package week12;
 /*
 Adjacency List representation
 Unweighted and Undirected Graph
@@ -94,7 +95,5 @@ public class Graph12 {
 //        g12.printGraph();
 
     }
-
-
 
 }

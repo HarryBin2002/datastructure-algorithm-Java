@@ -1,3 +1,4 @@
+package week12;
 // Adjacency Matrix representation
 // Unweighted - Undirected Graph
 
